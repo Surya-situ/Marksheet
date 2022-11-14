@@ -24,18 +24,22 @@ let calculate = () => {
     grade = "E"
   } else if (percentage1 >= 60 && percentage1 < 80) {
     grade = "A"
-  } else if (percentage1 < 60) {
+  } else if (percentage1 >= 40 && percentage1 < 60) {
     grade = "B"
-  } 
+  } else if ( percentage1 >= 33 ) {
+      grade = "c"
+  }
 
   if (percentage1 > 100) {
         showData = 
         ` Wrong input `;
+    } else if ( percentage1 < 33 ) {
+        showData = `You have failed the exam.`
     } else {
       showData = 
         ` Out of 600 your total is  ${totalSum} 
         and percentage is ${percentage1}%. <br> 
-        Your grade is ${grade}. You are pass. `;
+        Your grade is ${grade}. Congratulatoin you have passed the exam. `;
   }
 
   document.getElementById("showData").innerHTML = showData;
